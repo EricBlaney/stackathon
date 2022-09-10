@@ -109,7 +109,7 @@ class Moon extends Phaser.Scene {
     
     update() {
         let progress = this.timedEvent.getProgress() * 5;
-        this.text.setText('Fall time: ' + progress.toString().substr(0, 4) + 's');
+        this.text.setText('Ball fall time: ' + progress.toString().substr(0, 4) + 's');
         let featherProgress = this.timedEventFeather.getProgress() * 5;
         this.text2.setText('Feather fall time: ' + featherProgress.toString().substr(0, 4) + 's' )
     }
