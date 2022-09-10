@@ -4,6 +4,10 @@ import ground from '../assets/Ground.png';
 import ball from '../assets/ball.png';
 import mars_text from '../assets/mars_text.png'
 import feather from '../assets/feather.png'
+import earth_button from '../assets/earth_button.png';
+import mars_button from '../assets/mars_button.png';
+import moon_button from '../assets/moon_button.png';
+import venus_button from '../assets/venus_button.png';
 
 class Mars extends Phaser.Scene {
     constructor() {
@@ -22,6 +26,10 @@ class Mars extends Phaser.Scene {
         this.load.image('ball', ball); 
         this.load.image('mars_text', mars_text);
         this.load.image('feather', feather);
+        this.load.image('earth_button', earth_button);
+        this.load.image('mars_button', mars_button);
+        this.load.image('moon_button', moon_button);
+        this.load.image('venus_button', venus_button);
     }
 
     
@@ -29,10 +37,10 @@ class Mars extends Phaser.Scene {
     create() {
 
         this.background = this.add.image(400, 300, 'mars_sky');
-        this.earth_button = this.add.text(600, 300, 'Earth', {fontSize: '24px'}).setPadding({x: 5 , y:5}).setStyle({ backgroundColor: 'blue'});
-        this.mars_button = this.add.text(600, 335, 'Mars', {fontSize: '24px'}).setPadding({left: 5, right: 20 , y:5}).setStyle({backgroundColor: 'red'});
-        this.moon_button = this.add.text(600, 370, 'Moon', {fontSize: '24px'}).setPadding({left: 5 ,right: 20, y:5}).setStyle({backgroundColor: 'gray'});
-        this.venus_button = this.add.text(600, 405, '????', {fontSize: '24px'}).setPadding({left: 5 , right:20, y:5}).setStyle({backgroundColor: 'purple'});
+        this.earth_button = this.add.image(700, 300, 'earth_button').setScale(0.4);
+        this.mars_button = this.add.image(700, 340, 'mars_button').setScale(0.4);
+        this.moon_button = this.add.image(700, 380, 'moon_button').setScale(0.4);
+        this.venus_button = this.add.image(700, 420, 'venus_button').setScale(0.4);
         this.mars_text = this.add.image(200, 50, 'mars_text').setScale(0.35);
         this.matter.world.setBounds();
         this.canDrag = this.matter.world.nextGroup();
@@ -103,6 +111,35 @@ class Mars extends Phaser.Scene {
             }
     }, this)
     
+
+    this.earth_button.on('pointerover', function(){
+        this.earth_button.alpha = 0.7;
+
+    }, this)
+    this.earth_button.on('pointerout', function() {
+        this.earth_button.alpha = 1;
+    }, this)
+    this.mars_button.on('pointerover', function(){
+        this.mars_button.alpha = 0.7;
+
+    }, this)
+    this.mars_button.on('pointerout', function() {
+        this.mars_button.alpha = 1;
+    }, this)
+    this.moon_button.on('pointerover', function(){
+        this.moon_button.alpha = 0.7;
+
+    }, this)
+    this.moon_button.on('pointerout', function() {
+        this.moon_button.alpha = 1;
+    }, this)
+    this.venus_button.on('pointerover', function(){
+        this.venus_button.alpha = 0.7;
+
+    }, this)
+    this.venus_button.on('pointerout', function() {
+        this.venus_button.alpha = 1;
+    }, this)
     }
     
     
