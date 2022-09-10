@@ -11,7 +11,7 @@ class Moon extends Phaser.Scene {
         physics: {
             default: 'matter',
             matter: {
-                gravity: {y: 0.2}
+                gravity: {y: 0.22}
             }
         }
     });
